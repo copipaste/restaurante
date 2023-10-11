@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('detalle_ordenes', function (Blueprint $table) {
             $table->id();
-            $table->integer('orden_id');
-            $table->integer('producto_id');
+            $table->unsignedBigInteger('orden_id');
+            $table->unsignedBigInteger('producto_id');
             $table->integer('id_pedido');
             $table->decimal('precio');
             $table->integer('cantidad');
             $table->decimal('subtotal');
-
             $table->foreign('orden_id')->references('id')->on('ordenes')->onDelete('cascade');
             $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
 
