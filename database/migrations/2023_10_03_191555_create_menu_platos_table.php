@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('menu_platos', function (Blueprint $table) {
-            $table->integer('menu_id');
-            $table->integer('producto_id');
+            $table->unsignedBigInteger('menu_id');
+            $table->unsignedBigInteger('producto_id');
 
             $table->foreign('menu_id')->references('id')->on('menus')->onDelete('cascade');
             $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');

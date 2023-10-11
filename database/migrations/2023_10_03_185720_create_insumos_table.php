@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('insumos', function (Blueprint $table) {
             $table->id();
-            $table->integer('empleado_id');
-            $table->integer('almacen_id');
-            $table->integer('proveedor_id');
+            $table->unsignedBigInteger('empleado_id');
+            $table->unsignedBigInteger('almacen_id');
+            $table->unsignedBigInteger('proveedor_id');
             $table->string('nombre');
             $table->integer('unidad');
             $table->integer('stock');

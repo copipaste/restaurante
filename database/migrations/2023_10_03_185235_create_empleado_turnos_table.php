@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('empleado_turnos', function (Blueprint $table) {
             $table->id();
-            $table->integer('turno_id');
-            $table->integer('empleado_id');
+            $table->unsignedBigInteger('turno_id');
+            $table->unsignedBigInteger('empleado_id');
             $table->date('fecha');
             $table->time('horaEntrada');
             $table->time('horaLlegada');
